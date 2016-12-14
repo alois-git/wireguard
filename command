@@ -22,5 +22,7 @@ ip link set up dev wg0
 
 Forward traffic throw wg0:
 
-sudo route add default gw 192.168.2.1 wg0
+sudo ip route add publicipserver via 192.168.1.1 dev enp3s0 proto static
+sudo ip route change default via 192.168.2.2 dev wg0 proto static
+
 
